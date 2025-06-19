@@ -1,0 +1,29 @@
+// Bulk Write
+db.stokBarang.bulkWrite([
+  {
+    insertOne: {
+      document: {
+        _id: ObjectId(),
+        nama_barang: "Tepung Terigu",
+        kategori: "Sembako",
+        harga: 10000,
+        stok: 20,
+        satuan: "kg",
+        lokasi: "Gudang B2",
+        tanggal_masuk: new Date("2025-06-06")
+      }
+    }
+  },
+  {
+    updateOne: {
+      filter: { nama_barang: "Beras Premium" },
+      update: { $inc: { stok: 10 } }
+    }
+  },
+  {
+    deleteOne: {
+      filter: { nama_barang: "Sabun Cuci" }
+    }
+  }
+])
+db.stokBarang.find()
