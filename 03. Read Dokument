@@ -1,0 +1,2 @@
+// Tampilkan data
+db.stokBarang.find()
