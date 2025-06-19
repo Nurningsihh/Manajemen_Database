@@ -1,0 +1,6 @@
+// Update stok berdasarkan nama_barang
+db.stokBarang.updateOne(
+  { nama_barang: "Sabun Cuci" },
+  { $set: { stok: 55 } }
+)
+db.stokBarang.find()
