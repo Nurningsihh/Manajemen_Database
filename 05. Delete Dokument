@@ -1,0 +1,3 @@
+// Hapus data berdasarkan kategori
+db.stokBarang.deleteOne({ kategori: "Minuman" })
+db.stokBarang.find()
