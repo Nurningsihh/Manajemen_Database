@@ -1,0 +1,6 @@
+// Query pembandingan (barang yang masuk di tanggal tertentu)
+db.stokBarang.find({
+  tanggal_masuk: {
+    $eq: new Date("2025-06-05")
+  }
+})
