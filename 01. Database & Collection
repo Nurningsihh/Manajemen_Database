@@ -1,0 +1,3 @@
+use("Penjualan") 
+
+db.createCollection("stokBarang")
