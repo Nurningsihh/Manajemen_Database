@@ -1,0 +1,59 @@
+// Insert satu dokumen
+db.stokBarang.insertOne({
+  _id: ObjectId(),
+  nama_barang: "Gula Merah",
+  kategori: "Sembako",
+  harga: 15000,
+  stok: 50,
+  satuan: "kg",
+  lokasi: "Gudang A1",
+  tanggal_masuk: new Date("2025-06-01")
+})
+
+// Tampilkan semua dokumen
+db.stokBarang.find()
+
+// Drop ulang dan insert banyak data
+db.stokBarang.drop()
+db.stokBarang.insertMany([
+  {
+    _id: ObjectId(),
+    nama_barang: "Minyak Goreng",
+    kategori: "Sembako",
+    harga: 18000,
+    stok: 30,
+    satuan: "liter",
+    lokasi: "Gudang A2",
+    tanggal_masuk: new Date("2025-06-03")
+  },
+  {
+    _id: ObjectId(),
+    nama_barang: "Beras Premium",
+    kategori: "Sembako",
+    harga: 12000,
+    stok: 100,
+    satuan: "kg",
+    lokasi: "Gudang B1",
+    tanggal_masuk: new Date("2025-06-05")
+  },
+  {
+    _id: ObjectId(),
+    nama_barang: "Sabun Cuci",
+    kategori: "Kebutuhan Rumah Tangga",
+    harga: 7000,
+    stok: 60,
+    satuan: "pcs",
+    lokasi: "Gudang C1",
+    tanggal_masuk: new Date("2025-06-02")
+  },
+  {
+    _id: ObjectId(),
+    nama_barang: "Kopi Bubuk",
+    kategori: "Minuman",
+    harga: 10000,
+    stok: 40,
+    satuan: "pak",
+    lokasi: "Gudang D1",
+    tanggal_masuk: new Date("2025-06-04")
+  }
+])
