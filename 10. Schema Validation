@@ -1,0 +1,27 @@
+// Schema Validation
+db.runCommand({
+  collMod: "stokBarang",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["nama_barang", "kategori", "harga", "stok", "satuan", "lokasi", "tanggal_masuk"],
+      properties: {
+        nama_barang: { bsonType: "string" },
+        kategori: { bsonType: "string" },
+        harga: {
+          bsonType: "int",
+          minimum: 0
+        },
+        stok: {
+          bsonType: "int",
+          minimum: 0
+        },
+        satuan: { bsonType: "string" },
+        lokasi: { bsonType: "string" },
+        tanggal_masuk: { bsonType: "date" }
+      }
+    }
+  },
+  validationLevel: "strict",
+  validationAction: "error"
+})
