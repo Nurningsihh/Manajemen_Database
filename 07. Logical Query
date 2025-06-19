@@ -1,0 +1,7 @@
+/ Logical Query
+db.stokBarang.find({
+  $and: [
+    { kategori: { $eq: "Sembako" } },
+    { harga: { $lt: 15000 } }
+  ]
+})
