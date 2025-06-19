@@ -1,0 +1,12 @@
+// Aggregation: Total stok per kategori
+db.stokBarang.aggregate([
+  {
+    $group: {
+      _id: "$kategori",
+      totalStok: { $sum: "$stok" }
+    }
+  },
+  {
+    $sort: { totalStok: -1 }
+  }
+])
